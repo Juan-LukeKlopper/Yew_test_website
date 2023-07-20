@@ -1,23 +1,23 @@
 use yew::prelude::*;
+use stylist::{yew::styled_component, style };
 
-#[function_component]
+#[styled_component]
 fn App() -> Html {
     let header = "Hello world".to_string();
-    let counter = use_state(|| 0 );
-    let onclick = {
-        let counter = counter.clone();
-        move |_| {
-            let value = *counter + 1;
-            counter.set(value);
-        }
-    };
+
+    let stylesheet = style!(
+            r#"
+                background-color: blue; 
+            "#
+        ).expect("Failed to load stylesheet");
 
     html! {
-        <div>
-            <h1>{ header }</h1>
-            <button {onclick}>{ "+1" }</button>
-            <p>{ *counter }</p>
-        </div>
+        <html class={stylesheet}>
+            <div>
+                <h1>{ header }</h1>
+                <p>{ "This is a paragraph" }</p>
+            </div>
+        </html>
     }
 }
 
