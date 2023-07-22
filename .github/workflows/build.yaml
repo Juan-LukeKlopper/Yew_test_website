@@ -10,8 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     setps:
-      - name: Checkour
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
       - name: Install Rust
         uses: actions-rs/toolchain@v1
