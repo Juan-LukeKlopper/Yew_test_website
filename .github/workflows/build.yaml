@@ -20,7 +20,6 @@ jobs:
           toolchain: stable
           override: true
 
-
       - name: Install Trunk
         uses: jetli/trunk-action@v0.4.0
         with:
@@ -46,18 +45,18 @@ jobs:
         with:
           path: "./dist"
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
+    deploy:
+      needs: build
+      runs-on: ubuntu-latest
     
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      permissions:
+        pages: write
+        id-token: write
+      environment:
+        name: github-pages
+        url: ${{ steps.deployment.outputs.page_url }}
 
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
+      steps:
+        - name: Deploy to GitHub Pages
+          id: deployment
+          uses: actions/deploy-pages@v1
