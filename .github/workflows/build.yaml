@@ -1,5 +1,5 @@
 ---
-Name: yew CI/CD
+name: yew CI/CD
 on:
   push:
     branches:
