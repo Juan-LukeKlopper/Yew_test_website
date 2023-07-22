@@ -3,14 +3,13 @@ use stylist::{yew::styled_component, style };
 
 #[styled_component]
 fn App() -> Html {
-    let header = "Intercosmic Labs".to_string();
-    let footer = "Please Stand by as we're getting ready for Blast off!".to_string();
+    let header = "Coming Soon!".to_string();
+    let paragraph = "Please Stand by as we're getting ready for Blast off!".to_string();
 
     let stylesheet = style!(
             r#"
                 background-color: None;
-                padding-top: min(5%);
-                padding-top: max(12.5%);
+                padding-top: max(100px, 12.5%);
                 padding-right: 7.5%;
                 padding-bottom: 2%;
                 padding-left: 7.5%;
@@ -21,7 +20,7 @@ fn App() -> Html {
         <div class={stylesheet}>
             <div>
                 <h1>{ header }</h1>
-                <p>{ footer }</p>
+                <p>{ paragraph }</p>
             </div>
         </div>
     }
