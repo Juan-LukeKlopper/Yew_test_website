@@ -1,4 +1,3 @@
----
 name: yew CI/CD
 on:
   push:
